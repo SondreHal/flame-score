@@ -380,7 +380,7 @@ const saveDataObject = {
 	allStat: 0,
 };
 
-var numCards = 10;
+let numCards = 10;
 
 function loadNumCards() {
 	const storage = window.localStorage;
@@ -420,6 +420,63 @@ function initCards() {
 
 	// hide original card.
 	firstCard.hide();
+
+	//Names the different cards.
+	const hat = document.querySelector(".itemCard-1");
+	const hat2 = hat.firstElementChild;
+	hat2.textContent = "Hat";
+
+	const pendant = document.querySelector(".itemCard-2");
+	const pendant2 = pendant.firstElementChild;
+	pendant2.textContent = "Pendant";
+
+	const faceAccessory = document.querySelector(".itemCard-3");
+	const faceAccessory2 = faceAccessory.firstElementChild;
+	faceAccessory2.textContent = "Face Accessory";
+
+	const pendant_2 = document.querySelector(".itemCard-4");
+	const pendant2_2 = pendant_2.firstElementChild;
+	pendant2_2.textContent = "Pendant";
+
+	const eyeAccessory = document.querySelector(".itemCard-5");
+	const eyeAccessory2 = eyeAccessory.firstElementChild;
+	eyeAccessory2.textContent = "Eye Accessory";
+
+	const earrings = document.querySelector(".itemCard-6");
+	const earrings2 = earrings.firstElementChild;
+	earrings2.textContent = "Earrings";
+
+	const weapon = document.querySelector(".itemCard-7");
+	const weapon2 = weapon.firstElementChild;
+	weapon2.textContent = "Weapon";
+
+	const top_overall = document.querySelector(".itemCard-8");
+	const top_overall2 = top_overall.firstElementChild;
+	top_overall2.textContent = "Top/Overall";
+
+	const pocketItem = document.querySelector(".itemCard-9");
+	const pocketItem2 = pocketItem.firstElementChild;
+	pocketItem2.textContent = "Pocket Item";
+
+	const belt = document.querySelector(".itemCard-10");
+	const belt2 = belt.firstElementChild;
+	belt2.textContent = "Belt";
+
+	const pants = document.querySelector(".itemCard-11");
+	const pants2 = pants.firstElementChild;
+	pants2.textContent = "Pants";
+
+	const gloves = document.querySelector(".itemCard-12");
+	const gloves2 = gloves.firstElementChild;
+	gloves2.textContent = "Gloves";
+
+	const cape = document.querySelector(".itemCard-13");
+	const cape2 = cape.firstElementChild;
+	cape2.textContent = "Cape";
+
+	const shoes = document.querySelector(".itemCard-14");
+	const shoes2 = shoes.firstElementChild;
+	shoes2.textContent = "Shoes";
 }
 
 function onAddCardsClick() {
