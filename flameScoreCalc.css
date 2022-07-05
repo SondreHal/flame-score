@@ -1,0 +1,299 @@
+@font-face {
+	font-family: Gill-medium;
+	src: url(fonts/Gill\ Sans\ Medium.otf);
+}
+
+body {
+	background-color: rgb(49, 49, 49);
+	color: rgb(216, 216, 216);
+	font-family: Gill-medium;
+}
+
+#everythingWrapper {
+	margin: auto;
+	width: 590px;
+	display: flex;
+	justify-content: center;
+}
+
+.yourItems {
+	text-align: center;
+}
+
+#info {
+	width: 590px;
+}
+
+#scoreDisplay,
+#tierDisplay {
+	margin-bottom: 20px;
+}
+
+#errorMessage {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#nonWeapon {
+	width: 240px;
+	margin-right: 80px;
+}
+
+#weaponFlameTier {
+	width: 350px;
+}
+
+#calcWrapper {
+	display: flex;
+	width: fit-content;
+}
+
+input {
+	background-color: rgb(196, 196, 196);
+}
+
+select {
+	background-color: rgb(196, 196, 196);
+}
+
+button {
+	background-color: rgb(196, 196, 196);
+	border: none;
+}
+
+#itemCards input {
+	background-color: inherit;
+	border: none;
+	font: inherit;
+	color: rgb(0, 228, 11);
+	text-align: center;
+}
+
+td,
+th {
+	width: 30px;
+}
+
+td {
+	text-align: center;
+}
+
+td,
+th,
+table {
+	border: 1px ridge grey;
+	border-collapse: collapse;
+}
+
+#tierDisplay {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#scoreDisplay,
+#weapTierWrapper {
+	font-size: 15pt;
+}
+
+button {
+	display: block;
+	margin: 4px 0;
+}
+
+.input {
+	display: flex;
+	justify-content: space-between;
+}
+
+#statsInput,
+#statSelection,
+#weaponTierInputs {
+	width: 224px;
+}
+
+#statsInput input {
+	width: 120px;
+}
+
+#weaponTierInputs input {
+	width: 100px;
+}
+
+#weaponTierInputs select {
+	width: 108px;
+}
+
+#weaponTierInputs #flameAdvantage {
+	width: 20px;
+}
+
+.check {
+	width: 220px;
+}
+
+.bigborder {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+/* Item cards */
+#itemCards {
+	width: 600px;
+	display: grid;
+	grid-template-columns: 106px 106px 106px 106px 106px;
+	grid-template-rows: 115px 115px 115px 115px 115px 115px;
+	gap: 16px;
+	text-align: center;
+}
+
+div.itemCard-1,
+div.itemCard-2,
+div.itemCard-3,
+div.itemCard-4,
+div.itemCard-5,
+div.itemCard-6,
+div.itemCard-7,
+div.itemCard-8,
+div.itemCard-9,
+div.itemCard-10,
+div.itemCard-11,
+div.itemCard-12,
+div.itemCard-13,
+div.itemCard-14 {
+	width: fit-content;
+	height: fit-content;
+	border: 3px solid grey;
+	padding: 4px;
+	margin: 4px;
+}
+
+div.itemCard-1 {
+	grid-column-start: 3;
+}
+
+div.itemCard-2,
+div.itemCard-3 {
+	grid-row-start: 2;
+}
+
+div.itemCard-2 {
+	grid-column-start: 2;
+}
+
+div.itemCard-3 {
+	grid-column-start: 3;
+}
+
+div.itemCard-4,
+div.itemCard-5,
+div.itemCard-6 {
+	grid-row-start: 3;
+	grid-column-start: 2;
+}
+
+div.itemCard-4 {
+	grid-column-start: 2;
+}
+
+div.itemCard-5 {
+	grid-column-start: 3;
+}
+
+div.itemCard-6 {
+	grid-column-start: 4;
+}
+
+div.itemCard-7,
+div.itemCard-8 {
+	grid-row-start: 4;
+	grid-column-start: 2;
+}
+
+div.itemCard-7 {
+	grid-column-start: 2;
+}
+
+div.itemCard-8 {
+	grid-column-start: 3;
+}
+
+div.itemCard-9,
+div.itemCard-10,
+div.itemCard-11,
+div.itemCard-12,
+div.itemCard-13 {
+	grid-row-start: 5;
+}
+
+div.itemCard-14 {
+	grid-row-start: 6;
+	grid-column-start: 3;
+}
+
+.itemName {
+	width: 84px;
+	margin-bottom: 2px;
+}
+
+.bottomButtons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.saveButton {
+	width: 100%;
+}
+
+.bottomButtons button {
+	width: 48%;
+	padding: 1px;
+}
+
+h2 {
+	display: inline-block;
+}
+
+#cardAmountButtons button {
+	display: inline;
+	width: 20 px;
+}
+
+/* Stolen from https://www.w3schools.com/css/css_tooltip.asp */
+
+/* Tooltip container */
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+	visibility: hidden;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+
+	/* Position the tooltip text */
+	position: absolute;
+	z-index: 1;
+	width: 500px;
+	top: 100%;
+	left: 50%;
+	margin-left: -100px;
+
+	/* Fade in tooltip */
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}

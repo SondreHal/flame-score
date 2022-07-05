@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script type="text/javascript" src="flameScoreCalc.js"></script>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flame Score Calculator</title>
+		<link rel="stylesheet" href="flameScoreCalc.css" />
+	</head>
+	<body>
+		<div id="everythingWrapper">
+			<div class="bigborder">
+				<div id="info">
+					<h1>Flame Score Calculator</h1>
+					<div id="errorMessage"></div>
+					<div>
+						<label>
+							<input checked type="radio" name="gameStage" value="late" />
+							Late Game
+						</label>
+						<label>
+							<input type="radio" name="gameStage" value="end" />
+							End Game
+						</label>
+					</div>
+				</div>
+				<h2>Your Character</h2>
+				<span class="tooltip"
+					>?
+					<span class="tooltiptext">
+						Select your class in the dropdown. If your class isn't there,
+						select your class's main stat. No DA yet.
+					</span>
+				</span>
+				<div id="player">
+					<div id="statSelection">
+						<div>
+							<label for="classType"> Class/Main Stat: </label>
+							<select id="classType">
+								<optgroup label="Special Classes">
+									<option value="xenon">Xenon</option>
+									<option value="kanna">Kanna</option>
+									<option value="memeThief" selected>
+										Shadower/DB/Cadena
+									</option>
+								</optgroup>
+								<optgroup label="Normal Classes">
+									<option value="str">Str</option>
+									<option value="dex">Dex</option>
+									<option value="int">Int</option>
+									<option value="luk">Luk</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div id="calcWrapper">
+					<div id="nonWeapon">
+						<h2>Item Flame Calculator</h2>
+						<div id="scoreDisplay">
+							<span> Flame Score: </span>
+							<span id="nonWeapScore">0</span>
+						</div>
+						<div id="statsInput">
+							<div class="input">
+								<label for="str"> Str </label>
+								<input type="number" id="str" />
+							</div>
+							<div class="input">
+								<label for="dex"> Dex </label>
+								<input type="number" id="dex" />
+							</div>
+							<div class="input">
+								<label for="int"> Int </label>
+								<input type="number" id="int" />
+							</div>
+							<div class="input">
+								<label for="luk"> Luk </label>
+								<input type="number" id="luk" />
+							</div>
+							<div class="input">
+								<label for="hp"> HP </label>
+								<input type="number" id="hp" />
+							</div>
+							<div class="input">
+								<label for="mp"> MP </label>
+								<input type="number" id="mp" />
+							</div>
+							<div class="input">
+								<label for="wAtt"> W. Att </label>
+								<input type="number" id="wAtt" />
+							</div>
+							<div class="input">
+								<label for="mAtt"> M. Att </label>
+								<input type="number" id="mAtt" />
+							</div>
+							<div class="input">
+								<label for="allStat"> All Stat (%) </label>
+								<input type="number" id="allStat" />
+							</div>
+						</div>
+						<div id="buttons">
+							<button onCLick="calcFlameScore()" id="calcBtn">
+								Calculate
+							</button>
+							<button onCLick="resetNumbers()" id="resetBtn">Reset</button>
+						</div>
+					</div>
+					<div id="weaponFlameTier">
+						<h2>Weapon Flame Tier</h2>
+						<div id="tierDisplay">
+							<div id="weapTierWrapper">
+								<span> Tier: </span>
+								<span id="weapTier">0</span>
+							</div>
+							<div>Attack flame tiers:</div>
+							<div>
+								<table>
+									<tr>
+										<th>1</th>
+										<th>2</th>
+										<th>3</th>
+										<th>4</th>
+										<th>5</th>
+										<th>6</th>
+										<th>7</th>
+									</tr>
+									<tr>
+										<td id="wt0">0</td>
+										<td id="wt1">0</td>
+										<td id="wt2">0</td>
+										<td id="wt3">0</td>
+										<td id="wt4">0</td>
+										<td id="wt5">0</td>
+										<td id="wt6">0</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div id="weaponTierInputs">
+							<div class="check">
+								<label for="flameAdvantage"> Flame advantaged? </label>
+								<input type="checkbox" id="flameAdvantage" />
+							</div>
+							<div class="input">
+								<label for="levelRange"> Weapon Level </label>
+								<select id="levelRange">
+									<option value="1">0-39</option>
+									<option value="2">40-79</option>
+									<option value="3">80-119</option>
+									<option value="4">120-159</option>
+									<option value="5" selected>160-199</option>
+									<option value="6">200-239</option>
+									<option value="7">240-275</option>
+								</select>
+							</div>
+							<div class="input">
+								<label for="baseAttack"> Base Attack </label>
+								<input id="baseAttack" />
+							</div>
+							<div class="input">
+								<label for="flameAttack"> Attack Flame </label>
+								<input id="flameAttack" />
+							</div>
+							<div>
+								<button
+									onClick="onWeaponFlameBtnClick()"
+									id="calcWeaponFlameBtn"
+								>
+									Calculate
+								</button>
+								<button
+									onClick="onClearWeaponFlame()"
+									id="clearWeaponFlameBtn"
+								>
+									Clear
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bigborder">
+				<div class="yourItems">
+					<h2>Your Items</h2>
+					<div id="itemCards"></div>
+					<div class="grid1">
+						<div class="itemCardTemplate">
+							<label>
+								<input type="text" class="itemName" />
+							</label>
+							<div><span>Score: </span><span class="js-score">0</span></div>
+							<button class="saveButton">Save</button>
+							<div class="bottomButtons">
+								<button class="editButton">Edit</button>
+								<button class="clearButton">Clear</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
