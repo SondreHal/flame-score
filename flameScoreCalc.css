@@ -10,10 +10,14 @@ body {
 }
 
 #everythingWrapper {
-	margin: auto;
 	width: 590px;
 	display: flex;
 	justify-content: center;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .yourItems {
@@ -50,15 +54,18 @@ body {
 }
 
 input {
-	background-color: rgb(196, 196, 196);
+	background-color: rgb(226, 226, 226);
+	border-style: none;
+	border: 1px solid rgb(49, 49, 49);
 }
 
 select {
-	background-color: rgb(196, 196, 196);
+	background-color: rgb(226, 226, 226);
+	border-style: none;
 }
 
 button {
-	background-color: rgb(196, 196, 196);
+	background-color: rgb(226, 226, 226);
 	border: none;
 	border-radius: 4px;
 }
@@ -69,7 +76,7 @@ button:hover {
 }
 
 button:active {
-	background-color: rgb(196, 196, 196);
+	background-color: rgb(226, 226, 226);
 }
 
 #itemCards p {
@@ -134,7 +141,8 @@ button {
 }
 
 #weaponTierInputs select {
-	width: 108px;
+	width: 106px;
+	border: 1px solid rgb(49, 49, 49);
 }
 
 #weaponTierInputs #flameAdvantage {
@@ -205,7 +213,6 @@ div.itemCard-4,
 div.itemCard-5,
 div.itemCard-6 {
 	grid-row-start: 3;
-	grid-column-start: 2;
 	width: 130px;
 }
 
@@ -221,31 +228,29 @@ div.itemCard-6 {
 	grid-column-start: 4;
 }
 
-div.itemCard-7,
-div.itemCard-8 {
+div.itemCard-7 {
 	grid-row-start: 4;
-	grid-column-start: 2;
 	width: 130px;
 }
 
 div.itemCard-7 {
-	grid-column-start: 2;
-}
-
-div.itemCard-8 {
 	grid-column-start: 3;
 }
 
+div.itemCard-8,
 div.itemCard-9,
 div.itemCard-10,
 div.itemCard-11,
-div.itemCard-12,
-div.itemCard-13 {
+div.itemCard-12 {
 	grid-row-start: 5;
 	width: 130px;
 }
 
-div.itemCard-14 {
+div.itemCard-8 {
+	grid-column-start: 1;
+}
+
+div.itemCard-13 {
 	grid-row-start: 6;
 	grid-column-start: 3;
 	width: 130px;

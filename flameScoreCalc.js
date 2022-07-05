@@ -410,7 +410,7 @@ function initCards() {
 	const cardContainer = $("#itemCards");
 	cardContainer.empty();
 
-	for (let i = 0; i < 14; i++) {
+	for (let i = 0; i < 13; i++) {
 		const card = firstCard.clone();
 		card.removeClass("itemCardTemplate");
 		card.addClass("itemCard" + "-" + [i + 1]);
@@ -446,35 +446,31 @@ function initCards() {
 	const earrings2 = earrings.firstElementChild;
 	earrings2.textContent = "Earrings";
 
-	const weapon = document.querySelector(".itemCard-7");
-	const weapon2 = weapon.firstElementChild;
-	weapon2.textContent = "Weapon";
-
-	const top_overall = document.querySelector(".itemCard-8");
+	const top_overall = document.querySelector(".itemCard-7");
 	const top_overall2 = top_overall.firstElementChild;
 	top_overall2.textContent = "Top/Overall";
 
-	const pocketItem = document.querySelector(".itemCard-9");
+	const pocketItem = document.querySelector(".itemCard-8");
 	const pocketItem2 = pocketItem.firstElementChild;
 	pocketItem2.textContent = "Pocket Item";
 
-	const belt = document.querySelector(".itemCard-10");
+	const belt = document.querySelector(".itemCard-9");
 	const belt2 = belt.firstElementChild;
 	belt2.textContent = "Belt";
 
-	const pants = document.querySelector(".itemCard-11");
+	const pants = document.querySelector(".itemCard-10");
 	const pants2 = pants.firstElementChild;
 	pants2.textContent = "Pants";
 
-	const gloves = document.querySelector(".itemCard-12");
+	const gloves = document.querySelector(".itemCard-11");
 	const gloves2 = gloves.firstElementChild;
 	gloves2.textContent = "Gloves";
 
-	const cape = document.querySelector(".itemCard-13");
+	const cape = document.querySelector(".itemCard-12");
 	const cape2 = cape.firstElementChild;
 	cape2.textContent = "Cape";
 
-	const shoes = document.querySelector(".itemCard-14");
+	const shoes = document.querySelector(".itemCard-13");
 	const shoes2 = shoes.firstElementChild;
 	shoes2.textContent = "Shoes";
 }
